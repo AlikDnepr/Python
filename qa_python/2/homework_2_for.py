@@ -26,7 +26,7 @@ print("Exercise 5")
 for i in range(-10, 0):
     print(i, "\n")
 
-print("Exercise 6")
+print("Exercise 5")
 for i in range(1, 6):
     print(i * "* ", "\n")
 for i in range(4, 0, -1):

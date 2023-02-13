@@ -37,7 +37,7 @@ example_list = [1, 2, 3, 0, 4, 5, 6, 7, 8, 9, 10, "last variable", "last variabl
 example_list = list(set(example_list))
 print(example_list)
 
-print("Exercise 6")
+print("Exercise 5")
 
 user_input1 = input("Первый пользовательский вводи: ")
 user_input2 = input("Второй пользовательский ввод: ")

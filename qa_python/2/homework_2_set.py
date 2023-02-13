@@ -29,7 +29,7 @@ set52 = {10, 20, 30}
 set51.difference_update(set52)
 print(set51)
 
-print("Exercise 6")
+print("Exercise 5")
 set61 = {10, 20, 30, 40, 50}
 set62 = {30, 40, 50, 60, 70}
 set63 = set61.symmetric_difference(set62)

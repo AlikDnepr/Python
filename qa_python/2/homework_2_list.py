@@ -35,7 +35,7 @@ list2 = [100, 200, 300, 400]
 for x, y in zip(list1, list2[::-1]):
     print(x, y, "\n")
 
-print("Exercise 6")
+print("Exercise 5")
 list11 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
 list11[2][2].append(7000)
 print(list11)

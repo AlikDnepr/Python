@@ -5,7 +5,7 @@ print("""Инициализировали переменную watermelons со 
 first_day = watermelons / 6
 print("""Инициализировали переменную first_day в которой определили количесво оставшихся арбузов,
  после продажи в первый день. 
-    first_day = watermelons / 6 """)
+    first_day = watermelons / 5 """)
 second_day = watermelons - first_day * 2 - 27
 print("""Инициализировали переменную second_day в которой расчитываем количество арбузов проданных за 2 дня:
     second_day = watermelons - first_day * 2 - 27, в нашем случае в этой переменной будет находитсья ответ, 
