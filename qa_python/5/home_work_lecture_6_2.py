@@ -68,6 +68,7 @@ def main():
     new_text = replace_spaces_with_paragraphs(replaced_text)
     write_to_file(new_text)
     print(new_text)
+
 """/Users/oshlymeta.ua_1/PycharmProjects/PythonTesting/qa_python/5/example1.txt"""
 if __name__ == "__main__":
     """
