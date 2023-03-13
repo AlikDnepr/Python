@@ -1,6 +1,6 @@
 try:
 
-    with open("../../../../Desktop/example.txt") as file:
+    with open("example.txt") as file:
         text = file.read().replace(".", "").replace("!", "").replace("?", "").replace(",", "").lower()
         list_of_all_words = text.split()
         uniques = {}

@@ -3,6 +3,7 @@
 если файл не существует - предотвратить ошибку и напечатать пользователю что ошибка была предотвращена,
  файл не существует и остановить работу скрипта"""
 
+
 def read_from_file(file_path):
     try:
         with open(file_path, "r") as file:
@@ -13,50 +14,61 @@ def read_from_file(file_path):
 
 
 def clean_text(text):
-    return text.lower().replace(",", "").split()
+    return sorted(
+        text.lower().replace(",", "").replace(".", "").replace("!", "").replace("?", "").lower().split())
 
-"""вывести в консоль самое часто встречаемое слово в файле, и сколько раз оно встречается"""
-def max_word(text_lst):
 
-    return
-"""вывести в консоль самое редко встречаемое слово в файле, и сколько раз оно встречается"""
-def min_word(text_lst):
+def max_word(cleaned_text):
+    c = sorted(cleaned_text, key=cleaned_text.count)
+    return c[-1]
 
-    return
+
+def min_word(cleaned_text):
+    c = sorted(cleaned_text, key=cleaned_text.count)
+    return c[0]
+
 
 def replace(text_list, max_word, min_word):
     return [word if word != max_word else min_word for word in text_list]
 
-def join_by_ten(text_list):
-    new_text = []
-    for i, word in enumerate(text_list):
-        new_text.append(word)
-        if i % 10 == 0 and i != 0:
-            new_text.append("\n")
-    return new_text
+def replace_spaces_with_paragraphs(text):
+    words = text.split(" ")
+    result = ""
+    for i, word in enumerate(words):
+        if (i + 1) % 10 == 0:
+            result += f"{word}"
+        else:
+            result += word
+        if i != len(words) - 1:
+            result += " "
+    return result
 
-def write_to_file(file_path, text_list):
+def write_to_file(join_by_ten):
     try:
-        with open(file_path, "a") as file:
-            return file.writelines(text_list)
+        with open("new file.txt", "a") as file:
+            return file.writelines(join_by_ten)
     except FileNotFoundError:
-        with open(file_path, "w") as file:
-            return file.writelines(text_list)
+        with open("new file.txt", "w") as file:
+            return file.writelines(join_by_ten)
 
 
 def main():
     """
     Это ваша главная функция, определите в ней всю лолгику скрипта и используйте другие функции которые определите ВЫШЕ
     """
-    file_path = input("filename")
+    file_path = input("filename:")
     text = read_from_file(file_path)
     if not text:
         print('File not found')
         return
     cleaned_text = clean_text(text)
     word_min = min_word(cleaned_text)
-
-
+    word_max = max_word(cleaned_text)
+    replaced_text = text.replace(word_max, word_min, 14)
+    new_text = replace_spaces_with_paragraphs(replaced_text)
+    write_to_file(new_text)
+    print(new_text)
+"""/Users/oshlymeta.ua_1/PycharmProjects/PythonTesting/qa_python/5/example1.txt"""
 if __name__ == "__main__":
     """
     Эта конструкция гарантирует что файл будет исполнен только когда запущен на прямую

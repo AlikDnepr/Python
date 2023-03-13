@@ -1,9 +1,5 @@
-def read_from_file(file_path):
-    try:
-        with open(file_path, "r") as file:
-            return file.read()
-    except FileNotFoundError as i:
-        print("File not found, program stopped")
-        raise i
+txt = "one one was a race horse, two two was one too."
 
-read_from_file("/Users/oshlymeta.ua_1/Downloads/home_work_lecture_6_21.py")
+x = txt.replace("one", "three", 2)
+
+print(x)
