@@ -15,7 +15,7 @@ def read_from_file(file_path):
 
 def clean_text(text):
     return sorted(
-        text.lower().replace(",", "").replace(".", "").replace("!", "").replace("?", "").lower().split())
+        text.lower().replace(",", "").replace(".", "").replace("!", "").replace("?", "").split())
 
 
 def max_word(cleaned_text):
@@ -36,7 +36,7 @@ def replace_spaces_with_paragraphs(text):
     result = ""
     for i, word in enumerate(words):
         if (i + 1) % 10 == 0:
-            result += f"{word}"
+            result += f"{word}\n"
         else:
             result += word
         if i != len(words) - 1:
@@ -61,6 +61,7 @@ def main():
     if not text:
         print('File not found')
         return
+
     cleaned_text = clean_text(text)
     word_min = min_word(cleaned_text)
     word_max = max_word(cleaned_text)
